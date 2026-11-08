@@ -1,0 +1,28 @@
+MOCHILA S.O.S. – VERSIÓN CORREGIDA SOBRE EL PROTOTIPO ORIGINAL
+
+ARCHIVOS PRINCIPALES
+- index.html: estructura y pantallas de la aplicación.
+- styles.css: diseño adaptable para computadora y celular.
+- app.js: listas, navegación, mapa, guías, asistente y guardado local.
+- assets/: logo, robot original, mochila ilustrada y láminas de fenómenos.
+
+CÓMO PROBAR
+1. Descomprime el ZIP.
+2. Abre index.html en el navegador.
+3. Para ver el mapa de calles necesitas conexión a internet. La ubicación requiere que aceptes el permiso del navegador.
+
+PARA SUBIR A GITHUB PAGES
+Sube el contenido de esta carpeta al repositorio (index.html, styles.css, app.js y la carpeta assets). No subas el ZIP dentro del repositorio como si fuera la página.
+
+CAMBIOS INCLUIDOS
+- Navegación por pantallas separadas.
+- Sección Emergencia con teléfonos de Perú, ubicación del dispositivo y sonido local.
+- Mochila por perfiles, con medicamentos y salud integrados en la sección.
+- Mochila ilustrada abierta con artículos visibles.
+- Guías de fenómenos con ilustraciones y recomendaciones antes, durante y después.
+- Mapa de calles con capas de ejemplo y opción de ubicación.
+- Asistente con la mascota robot proporcionada y controles de voz del navegador.
+- Centro de organización con lista de tareas y plan familiar guardado localmente.
+
+IMPORTANTE
+Es un prototipo educativo. El mapa y sus zonas no son datos oficiales de riesgo ni de evacuación. La ubicación y el sonido funcionan en el dispositivo; no envían automáticamente alertas ni llaman a emergencias. El asistente ofrece respuestas guiadas y no es una IA generativa conectada. Las listas y guías se guardan o ejecutan en el navegador.

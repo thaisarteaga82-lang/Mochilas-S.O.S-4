@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092b61">
+<title>Mochila S.O.S. | Preparados hoy, más seguros mañana</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#inicio"><span class="brand-mark">✚</span><span>MOCHILA <b>S.O.S.</b><small>Preparados hoy, más seguros mañana</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+  <nav id="nav">
+    <a href="#inicio">Inicio</a><a href="#mochila">Mi mochila</a><a href="#emergencia">Emergencia</a><a href="#mapa">Mapa</a><a href="#fenomenos">Fenómenos</a><a href="#asistente">Asistente IA</a><a href="#organizacion">Centro de organización</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero page-view active" data-page="inicio" id="inicio">
+  <div class="hero-copy">
+    <span class="eyebrow">PREPARACIÓN FAMILIAR</span>
+    <h1>Preparados hoy,<br><em>más seguros mañana.</em></h1>
+    <p>Organiza tu mochila de emergencia, conoce los riesgos y prepara un plan familiar desde un solo lugar.</p>
+    <div class="hero-actions"><a class="btn red" href="#mochila">Preparar mi mochila →</a><a class="btn outline" href="#fenomenos">Ver recomendaciones</a></div>
+    <p class="offline-note">● Listas y recomendaciones básicas disponibles en este dispositivo.</p>
+  </div>
+  <div class="hero-art"><div class="shield">✚</div><div class="hero-backpack"><div class="bag-top"></div><div class="bag-front"><span>✚</span><b>MOCHILA<br>S.O.S.</b></div><div class="bag-pocket"></div></div><div class="hero-tag">TU FAMILIA, MÁS PREPARADA</div></div>
+</section>
+
+<section class="stats page-view" data-page="inicio">
+  <div><strong id="totalItems">0</strong><span>Artículos marcados</span></div>
+  <div><strong id="progressText">0%</strong><span>Avance de mochila</span></div>
+  <div><strong>6</strong><span>Perfiles familiares</span></div>
+</section>
+
+<section class="section page-view" data-page="mochila" id="mochila">
+  <div class="section-heading"><span class="eyebrow">LISTA PERSONALIZADA</span><h2>Mi mochila de emergencia</h2><p>Elige a cada integrante y revisa los artículos que necesita. Marca lo que ya está preparado.</p></div>
+  <div class="profile-tabs" id="profileTabs">
+    <button class="profile active" data-profile="bebe">👶 <span>Bebé</span></button>
+    <button class="profile" data-profile="nino">🧒 <span>Niño</span></button>
+    <button class="profile" data-profile="adolescente">🧑 <span>Adolescente</span></button>
+    <button class="profile" data-profile="adulto">🧑‍💼 <span>Adulto</span></button>
+    <button class="profile" data-profile="mayor">👵 <span>Adulto mayor</span></button>
+    <button class="profile" data-profile="mascota">🐾 <span>Mascota</span></button>
+  </div>
+  <div class="backpack-layout">
+    <div class="backpack-visual">
+      <img class="open-backpack-img" src="assets/mochila-abierta.svg" alt="Mochila de emergencia abierta con agua, botiquín, linterna, alimentos y documentos">
+      <div class="visual-caption">Mochila organizada por necesidades</div>
+    </div>
+    <div class="checklist-panel">
+      <div class="list-title"><div><span class="eyebrow">CONTENIDO DEL PERFIL</span><h3 id="profileTitle">👶 Bebé</h3></div><span class="percent" id="profileProgress">0%</span></div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+      <p class="hint">Los artículos pueden variar según la edad, el clima y las necesidades de cada persona.</p>
+      <div id="checklist" class="checklist"></div>
+      <div class="list-actions"><button class="btn outline small" id="resetList">Reiniciar lista</button><button class="btn blue small" id="printList">Imprimir lista</button></div>
+    </div>
+  </div>
+  <div class="med-inside"><div><span class="eyebrow">DENTRO DE TU MOCHILA</span><h3>Medicamentos y salud</h3><p>Prepara un pequeño kit personal para cada integrante que lo necesite. Mantén los productos en sus envases originales y añade recetas o indicaciones vigentes.</p></div><div class="med-points"><span>✓ Medicamentos indicados para esa persona</span><span>✓ Receta o instrucciones de uso</span><span>✓ Lentes, audífonos u otros apoyos necesarios</span><span>✓ Revisión de vencimientos y conservación</span></div><p class="safety-note">No cambies dosis ni tratamientos por esta guía. Consulta con un profesional de salud o veterinario para necesidades específicas.</p></div>
+  <p class="safety-note">⚠️ Adapta el contenido a las necesidades reales de tu familia. Para medicamentos, incluye únicamente los indicados por un profesional de salud.</p>
+</section>
+
+
+<section class="section page-view emergency-page" data-page="emergencia" id="emergencia">
+ <div class="section-heading"><span class="eyebrow">ACTÚA CON CALMA</span><h2>Emergencia y ayuda rápida</h2><p>Usa esta sección para consultar pasos básicos y preparar información útil. Si existe peligro inmediato, busca un lugar seguro y contacta a los servicios locales.</p></div>
+ <div class="emergency-banner"><div class="sos-symbol">SOS</div><div><span class="eyebrow">PRIORIDAD</span><h3>Primero, protégete.</h3><p>Aléjate del peligro, sigue las indicaciones oficiales y ayuda solo si puedes hacerlo sin exponerte.</p></div></div>
+ <div class="emergency-grid">
+  <article class="emergency-card"><div class="emergency-icon red-icon">☎</div><h3>Contactos de emergencia · Perú</h3><p>Selecciona el servicio que corresponda. Si no estás en Perú, confirma los números de tu localidad.</p><div class="call-list"><a href="tel:105"><b>105</b><span>Policía Nacional</span></a><a href="tel:106"><b>106</b><span>SAMU · atención médica</span></a><a href="tel:116"><b>116</b><span>Bomberos</span></a></div><small>La disponibilidad puede variar según la zona y cobertura.</small></article>
+  <article class="emergency-card"><div class="emergency-icon blue-icon">⌖</div><h3>Mi ubicación</h3><p>Obtén las coordenadas de este dispositivo para comunicarlas a una persona de confianza o a los servicios de ayuda.</p><button class="btn blue small" id="emergencyLocate">Obtener ubicación</button><p id="emergencyCoords" class="emergency-result">Aún no se ha solicitado.</p><button class="btn outline small" id="copyEmergencyCoords">Copiar coordenadas</button></article>
+  <article class="emergency-card"><div class="emergency-icon red-icon">◖</div><h3>Señal sonora local</h3><p>Emite un sonido desde este dispositivo para llamar la atención si hacerlo es seguro.</p><button class="btn red small" id="alarmStart">Activar sonido</button> <button class="btn outline small" id="alarmStop">Detener</button><small>El sonido no envía alertas ni contacta automáticamente a emergencias.</small></article>
+ </div>
+ <div class="emergency-steps"><h3>Pasos básicos ante una emergencia</h3><div><b>1. Protégete</b><span>Aléjate del peligro inmediato y evita exponerte para rescatar objetos.</span></div><div><b>2. Comunícate</b><span>Contacta a los servicios correspondientes y comparte información clara.</span></div><div><b>3. Sigue instrucciones</b><span>Atiende las indicaciones de autoridades y personal de emergencia.</span></div><div><b>4. Reúnete</b><span>Dirígete al punto acordado con tu familia cuando sea seguro hacerlo.</span></div></div>
+</section>
+
+<section class="section map-section page-view" data-page="mapa" id="mapa">
+  <div class="section-heading"><span class="eyebrow">ORIENTACIÓN LOCAL</span><h2>Mapa y puntos de reunión</h2><p>Explora calles y registra un punto de encuentro familiar. Las capas de riesgo y seguridad son solo ejemplos editables.</p></div>
+  <div class="map-toolbar">
+    <label class="layer-toggle"><input type="checkbox" id="riskLayer" checked> <i class="dot risk"></i> Zona de riesgo (ejemplo)</label>
+    <label class="layer-toggle"><input type="checkbox" id="safeLayer" checked> <i class="dot safe"></i> Zona segura verificada</label>
+    <label class="layer-toggle"><input type="checkbox" id="meetLayer" checked> <i class="dot meet"></i> Punto de reunión</label>
+    <button class="btn blue small" id="locateBtn">◎ Mostrar mi ubicación</button>
+  </div>
+  <div id="map" aria-label="Mapa de calles"></div>
+  <div class="map-foot"><span>🗺️ Mapa base de OpenStreetMap. Requiere internet para cargar calles.</span><span id="locationStatus">Ubicación no solicitada.</span></div>
+  <div class="meeting-form"><label for="meetingName">Nombre de tu punto de reunión</label><input id="meetingName" placeholder="Ej. Parque acordado con mi familia"><button class="btn red small" id="saveMeeting">Guardar punto</button></div>
+  <p class="safety-note">⚠️ Las áreas coloreadas son ilustrativas y no indican peligro o seguridad reales. Antes de evacuar, sigue las alertas y rutas oficiales de las autoridades.</p>
+</section>
+
+<section class="section phenomena-section page-view" data-page="fenomenos" id="fenomenos">
+  <div class="section-heading"><span class="eyebrow">CONOCE LOS PELIGROS</span><h2>Fenómenos y noticias</h2><p>Información básica para reconocer fenómenos naturales y prepararte.</p></div>
+  <div class="phenomena-grid">
+    <article class="phenomenon"><div class="phen-icon rain"><img src="assets/lluvias.svg" alt="Ilustración de rain" loading="lazy">🌧️</div><h3>Lluvias intensas</h3><p>Pueden causar inundaciones, desbordes y deslizamientos.</p><button class="text-btn" data-guide="lluvias">Ver recomendaciones →</button></article>
+    <article class="phenomenon"><div class="phen-icon landslide"><img src="assets/huaico.svg" alt="Ilustración de landslide" loading="lazy">⛰️</div><h3>Huaicos y deslizamientos</h3><p>El agua y el movimiento del suelo pueden afectar viviendas y caminos.</p><button class="text-btn" data-guide="huaicos">Ver recomendaciones →</button></article>
+    <article class="phenomenon"><div class="phen-icon tsunami"><img src="assets/tsunami.svg" alt="Ilustración de tsunami" loading="lazy">🌊</div><h3>Tsunamis</h3><p>Ante una alerta, sigue las rutas de evacuación hacia zonas altas.</p><button class="text-btn" data-guide="tsunami">Ver recomendaciones →</button></article>
+    <article class="phenomenon"><div class="phen-icon storm"><img src="assets/tormenta.svg" alt="Ilustración de storm" loading="lazy">⚡</div><h3>Tormentas eléctricas</h3><p>Busca refugio seguro y aléjate de espacios abiertos.</p><button class="text-btn" data-guide="tormentas">Ver recomendaciones →</button></article>
+    <article class="phenomenon"><div class="phen-icon quake"><img src="assets/sismo.svg" alt="Ilustración de quake" loading="lazy">🌎</div><h3>Sismos</h3><p>Los movimientos del suelo pueden ocurrir sin aviso previo.</p><button class="text-btn" data-guide="sismos">Ver recomendaciones →</button></article>
+    <article class="phenomenon"><div class="phen-icon fire"><img src="assets/incendio.svg" alt="Ilustración de fire" loading="lazy">🔥</div><h3>Incendios</h3><p>El humo y el fuego pueden propagarse rápidamente.</p><button class="text-btn" data-guide="incendios">Ver recomendaciones →</button></article>
+  </div>
+  <p class="source-note">Las recomendaciones son educativas. Para alertas actualizadas consulta fuentes oficiales como INDECI, SENAMHI e IGP.</p>
+</section>
+
+<section class="section assistant-section page-view" data-page="asistente" id="asistente">
+  <div class="assistant-card">
+    <div class="assistant-visual"><img src="assets/robot-mochila-sos.png" alt="Robot mascota original de Mochilas S.O.S."><span class="online"><i></i> ASISTENTE LISTO</span></div>
+    <div class="assistant-chat">
+      <span class="eyebrow">ORIENTACIÓN PERSONALIZADA</span><h2>Asistente IA S.O.S.</h2><p class="muted">Tu compañero para prepararte ante emergencias.</p>
+      <div class="chat-window" id="chatWindow"><div class="bubble bot">¡Hola! Soy el asistente S.O.S. 🤖 Puedo orientarte sobre tu mochila, los fenómenos naturales y la preparación familiar. ¿Qué necesitas saber?</div></div>
+      <div class="quick-questions"><button data-question="¿Qué debe llevar mi mochila?">🎒 Mi mochila</button><button data-question="¿Qué hago ante un sismo?">🌎 Sismo</button><button data-question="¿Cómo me preparo para lluvias intensas?">🌧️ Lluvias</button></div>
+      <form id="chatForm" class="chat-form"><input id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off"><button class="btn red" type="submit">Enviar</button></form>
+      <div class="voice-controls"><button class="btn outline small" id="speakBtn">🔊 Escuchar último mensaje</button><button class="btn outline small" id="micBtn">🎙️ Hablar</button><span id="voiceStatus">La voz depende del navegador.</span></div>
+      <p class="ai-disclaimer">Este prototipo ofrece respuestas guiadas y voz del navegador. No es una IA generativa conectada ni reemplaza las indicaciones de las autoridades.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section resources page-view" data-page="organizacion"><div><span class="eyebrow">APRENDE Y PREPÁRATE</span><h2>Centro de información</h2><p>Consulta fuentes oficiales para complementar estas guías.</p></div><div class="resource-links"><a href="https://www.gob.pe/indeci" target="_blank" rel="noopener">INDECI ↗</a><a href="https://www.senamhi.gob.pe/" target="_blank" rel="noopener">SENAMHI ↗</a><a href="https://www.igp.gob.pe/" target="_blank" rel="noopener">IGP ↗</a><a href="https://www.gob.pe/cenepred" target="_blank" rel="noopener">CENEPRED ↗</a></div></section>
+
+<section class="section page-view organization-page" data-page="organizacion" id="organizacion">
+ <div class="section-heading"><span class="eyebrow">PLAN FAMILIAR</span><h2>Centro de organización</h2><p>Reúnan la información necesaria, distribuyan responsabilidades y revisen su plan con frecuencia.</p></div>
+ <div class="organization-layout"><div class="organization-card"><h3>Lista de preparación</h3><p>Marca cada tarea cuando esté acordada o completada.</p><div class="org-checks"><label><input type="checkbox" data-org="meeting"> Definir un punto de encuentro familiar.</label><label><input type="checkbox" data-org="contacts"> Anotar teléfonos importantes en papel.</label><label><input type="checkbox" data-org="roles"> Acordar quién ayuda a niños, mayores y mascotas.</label><label><input type="checkbox" data-org="bag"> Revisar la mochila y fechas de vencimiento.</label><label><input type="checkbox" data-org="route"> Identificar rutas oficiales de evacuación.</label><label><input type="checkbox" data-org="practice"> Practicar el plan familiar.</label></div><div class="org-progress"><span id="orgProgressText">0 de 6 tareas</span><div><i id="orgProgressBar"></i></div></div></div>
+ <div class="organization-card"><h3>Datos de nuestro plan</h3><label class="org-label" for="familyMeeting">Punto de encuentro</label><input id="familyMeeting" placeholder="Ej. parque o local acordado"><label class="org-label" for="familyContact">Contacto familiar</label><input id="familyContact" placeholder="Nombre y teléfono de contacto"><label class="org-label" for="familyNotes">Notas importantes</label><textarea id="familyNotes" rows="4" placeholder="Responsabilidades, necesidades de apoyo y acuerdos..."></textarea><button class="btn red small" id="saveFamilyPlan">Guardar organización</button><p id="orgSaved" class="org-saved"></p></div></div>
+</section>
+
+</main>
+
+<footer><div class="brand"><span class="brand-mark">✚</span><span>MOCHILA <b>S.O.S.</b><small>Preparados hoy, más seguros mañana</small></span></div><p>Prototipo educativo de preparación familiar. Verifica siempre la información con fuentes oficiales.</p></footer>
+
+<div class="modal" id="guideModal" role="dialog" aria-modal="true" aria-labelledby="guideTitle"><div class="modal-card"><button class="modal-close" id="closeModal" aria-label="Cerrar">×</button><span class="eyebrow">GUÍA DE PREVENCIÓN</span><h2 id="guideTitle"></h2><div id="guideContent"></div><button class="btn blue" id="closeGuide">Entendido</button></div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="app.js"></script>
+</body></html>

@@ -22,7 +22,7 @@ CAMBIOS INCLUIDOS
 - Guías de fenómenos con ilustraciones y recomendaciones antes, durante y después.
 - Mapa de calles con capas de ejemplo y opción de ubicación.
 - Asistente con la mascota robot proporcionada y controles de voz del navegador.
-- Centro de organización con lista de tareas y plan familiar guardado localmente.
+- Centro de organización con enlaces a INDECI, SENAMHI, IGP y CENEPRED, cada uno con una descripción de su información. Se eliminó la sección «Plan familiar».
 
 IMPORTANTE
 Es un prototipo educativo. El mapa y sus zonas no son datos oficiales de riesgo ni de evacuación. La ubicación y el sonido funcionan en el dispositivo; no envían automáticamente alertas ni llaman a emergencias. El asistente ofrece respuestas guiadas y no es una IA generativa conectada. Las listas y guías se guardan o ejecutan en el navegador.
